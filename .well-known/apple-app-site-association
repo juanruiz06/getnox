@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID.com.juanruiz.nox"],
+        "components": [
+          { "/": "/p/*" },
+          { "/": "/e/*" },
+          { "/": "/v/*" },
+          { "/": "/u/*" }
+        ]
+      }
+    ]
+  }
+}
