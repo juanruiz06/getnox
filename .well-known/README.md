@@ -35,4 +35,6 @@ proyecto iOS de la app); falta publicar un build de la app con `associatedDomain
 - La raíz del repo tiene `.nojekyll`, que es lo que hace que GitHub Pages publique las
   carpetas que empiezan por punto (sin él, `.well-known/` no se serviría).
 - Mientras el AASA no esté activo, los enlaces siguen funcionando: abren la página
-  puente (`/p/`, `/e/`, `/v/`, `/u/`, `/a/`) con el botón "Abrir en NOX".
+  puente (`/p/`, `/e/`, `/v/`, `/u/`, `/a/`), que en iPhone intenta abrir la app sola
+  (iOS pregunta "¿Abrir esta página en NOX?") y, si no está instalada, manda a la App
+  Store a los ~1,6 s; los botones quedan de respaldo.

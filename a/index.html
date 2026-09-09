@@ -56,5 +56,24 @@ footer a{margin-right:14px}
 <p>© NOX · getnox.es</p>
 </footer>
 </div>
+<script>
+(function(){
+  // Si NOX está instalada, iOS la abre con el nox://; si no, Safari enseña un aviso y a
+  // los ~1,6 s mandamos a la App Store. Se cancela si la página se oculta (= la app se
+  // abrió). Solo en iPhone/iPad: en escritorio se queda el botón. Con los universal links
+  // (build 20) iOS abrirá la app antes de cargar esta página y este bloque no se ejecuta.
+  function autoOpen(target){
+    if(!/iPhone|iPad|iPod/i.test(navigator.userAgent)){return;}
+    var gone=false;
+    document.addEventListener('visibilitychange',function(){if(document.hidden){gone=true;}});
+    window.addEventListener('pagehide',function(){gone=true;});
+    setTimeout(function(){window.location.href=target;},60);
+    setTimeout(function(){
+      if(!gone&&!document.hidden){window.location.href='https://apps.apple.com/es/app/id6797049428';}
+    },1600);
+  }
+  autoOpen('nox://feed');
+})();
+</script>
 </body>
 </html>
