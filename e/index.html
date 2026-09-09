@@ -73,7 +73,12 @@ footer a{margin-right:14px}
   var btn=document.getElementById('open'), miss=document.getElementById('missing');
   var href=(function(){
     var i=ok(param('i'),ID);
-    return i?'nox://plan/'+encodeURIComponent(i):'';
+    if(!i){return '';}
+    var DATE=/^\d{4}-\d{2}-\d{2}$/;
+    var d=ok(param('d'),DATE), u=ok(param('u'),ID), q=[];
+    if(d){q.push('date='+encodeURIComponent(d));}
+    if(u){q.push('user='+encodeURIComponent(u));}
+    return 'nox://event/'+encodeURIComponent(i)+(q.length?'?'+q.join('&'):'');
   })();
   if(href){btn.setAttribute('href',href);btn.hidden=false;}
   else{miss.hidden=false;}
