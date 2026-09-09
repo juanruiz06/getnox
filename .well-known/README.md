@@ -2,14 +2,14 @@
 
 `apple-app-site-association` (AASA) es lo que hace que iOS abra la app en vez del
 navegador cuando alguien toca un enlace `https://getnox.es/p/…`, `/e/…`, `/v/…` o
-`/u/…`. Hoy está **preparado pero no activo**: falta sustituir el marcador y publicar
-un build de la app con `associatedDomains` (spec 042 §8, build 20).
+`/u/…`. Hoy está **preparado pero no activo**: el Team ID ya es el real (`NW3H8PF3XV`, del
+proyecto iOS de la app); falta publicar un build de la app con `associatedDomains`
+(spec 042 §8, build 20; PR preparada en juanruiz06/nox).
 
 ## Qué falta antes de activarlo
 
-1. **Sustituir `TEAMID`** en `apple-app-site-association` por el Team ID de Apple
-   (App Store Connect → Membership details → Team ID, 10 caracteres). El identificador
-   queda como `<TEAMID>.com.juanruiz.nox`.
+1. ~~Sustituir `TEAMID`~~ Hecho: `NW3H8PF3XV.com.juanruiz.nox` (si el Team ID cambiara,
+   está en App Store Connect → Membership details).
 2. En el repo de la app (`juanruiz06/nox`), añadir a `app.json`:
    `expo.ios.associatedDomains: ["applinks:getnox.es"]`. Cambia el fingerprint, así que
    **exige build nuevo** (no llega por OTA).

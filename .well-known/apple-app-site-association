@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.com.juanruiz.nox"],
+        "appIDs": ["NW3H8PF3XV.com.juanruiz.nox"],
         "components": [
           { "/": "/p/*" },
           { "/": "/e/*" },
