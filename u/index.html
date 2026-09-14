@@ -70,19 +70,14 @@ footer a{margin-right:14px}
     return '';
   }
   function ok(v,re){return v&&re.test(v)?v:'';}
-  // Si NOX está instalada, iOS la abre con el nox://; si no, Safari enseña un aviso y a
-  // los ~1,6 s mandamos a la App Store. Se cancela si la página se oculta (= la app se
-  // abrió). Solo en iPhone/iPad: en escritorio se queda el botón. Con los universal links
-  // (build 20) iOS abrirá la app antes de cargar esta página y este bloque no se ejecuta.
+  // Si NOX está instalada, iOS pregunta "¿Abrir en NOX?" y la abre con el nox://. Aquí
+  // SOLO se intenta abrir la app: la App Store automática se quitó (QA 2026-09-14) porque
+  // con el aviso de iOS en pantalla la página sigue visible y el temporizador mandaba a la
+  // App Store aunque la app se abriera. El botón "Descargar en la App Store" ya lleva allí.
+  // Con los universal links (build 20) iOS abrirá la app antes de cargar esta página.
   function autoOpen(target){
     if(!/iPhone|iPad|iPod/i.test(navigator.userAgent)){return;}
-    var gone=false;
-    document.addEventListener('visibilitychange',function(){if(document.hidden){gone=true;}});
-    window.addEventListener('pagehide',function(){gone=true;});
     setTimeout(function(){window.location.href=target;},60);
-    setTimeout(function(){
-      if(!gone&&!document.hidden){window.location.href='https://apps.apple.com/es/app/id6797049428';}
-    },1600);
   }
 
   var btn=document.getElementById('open'), miss=document.getElementById('missing');
