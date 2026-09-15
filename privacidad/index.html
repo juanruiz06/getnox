@@ -10,7 +10,7 @@ table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;display:b
 .nav{margin-top:8px;font-size:14px}.nav a{margin-right:16px}footer{margin-top:48px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);padding-top:18px}
 </style></head><body><div class="wrap"><header class="top"><span class="brand">NOX</span></header><div class="nav"><a href="/privacidad/">Política de privacidad</a><a href="/terminos/">Términos</a><a href="/soporte/">Soporte</a><a href="/eliminar-cuenta/">Eliminar cuenta</a></div><h1>Política de Privacidad de NOX</h1>
 <blockquote>
-<p><strong>Última actualización:</strong> 15/09/2026</p>
+<p><strong>Última actualización:</strong> 16/09/2026</p>
 <p>Esta política explica cómo <strong>NOX</strong> trata tus datos personales conforme al Reglamento
 (UE) 2016/679 (<strong>RGPD</strong>) y a la Ley Orgánica 3/2018 de Protección de Datos y garantía
 de los derechos digitales (<strong>LOPDGDD</strong>).</p>
@@ -130,6 +130,9 @@ personas de esa conversación, que pueden estar en un grupo aunque no sean tus a
 si entraron con un <strong>enlace de invitación</strong>. Quien tenga ese enlace ve el <strong>nombre del
 grupo y cuántas personas hay</strong> antes de unirse. Al unirte por un enlace, las personas del
 grupo verán tu nombre de usuario y tu foto.</li>
+<li>Si denuncias un mensaje o un chat, o alguien denuncia uno tuyo, <strong>una persona de nuestro
+equipo puede ver ese mensaje y su foto</strong> para revisar la denuncia. Es necesario para poder
+moderar y proteger a los usuarios (interés legítimo, art. 6.1.f RGPD).</li>
 </ul>
 <p>Ten en cuenta esta visibilidad antes de compartir contenido.</p>
 <hr>
@@ -137,12 +140,19 @@ grupo verán tu nombre de usuario y tu foto.</li>
 <ul>
 <li><strong>Datos de cuenta, perfil y contenido:</strong> mientras tu cuenta esté activa. Si borras tu
 cuenta, eliminamos tus datos personales y tu contenido (incluidas tus fotos) de forma
-permanente. Puedes eliminar tu cuenta desde la propia app (Ajustes → Eliminar cuenta).</li>
+permanente. Puedes borrar tu cuenta desde la propia app (Ajustes → Borrar cuenta). La
+excepción son tus mensajes en chats de otras personas, que se explica más abajo.</li>
 <li><strong>Contenido individual</strong> (una foto, un comentario): hasta que tú lo elimines.</li>
-<li><strong>Mensajes de chat</strong> (texto, fotos y tarjetas): mientras exista la conversación. Si eliminas
-un mensaje, deja de verse al instante y su foto se borra definitivamente en las 24 horas
-siguientes; si todas las personas salen de un grupo, la conversación y sus fotos se
-eliminan. Un mensaje eliminado por moderación deja de verse para todos.</li>
+<li><strong>Mensajes de chat</strong> (texto, fotos y tarjetas): mientras exista la conversación para
+alguna de las personas que participan en ella. Si eliminas un mensaje para todos, su
+texto se borra de nuestra base de datos en ese momento y su foto en las 24 horas
+siguientes; puede quedar una copia técnica en el sistema de mensajería en tiempo real
+hasta 3 días. Un mensaje eliminado por moderación deja de verse para todos igual.
+<strong>Eliminar un chat</strong> lo borra solo para ti: las demás personas conservan su copia. Cuando
+ninguna persona conserva ya una conversación, o lleva <strong>12 meses sin actividad</strong>, la
+eliminamos por completo con sus fotos. Si borras tu cuenta, tus fotos de chat se eliminan
+y tus mensajes en las conversaciones de otras personas dejan de tener autor (no se
+atribuyen a nadie), pero la conversación sigue existiendo para ellas.</li>
 <li><strong>Ubicación / presencia:</strong> es información efímera; usamos la ubicación de tu dispositivo
 solo en el momento: aproximada para calcular locales cercanos y tu presencia, y precisa
 (GPS) únicamente al publicar en La Sala, para comprobar que estás dentro del local. <strong>No
@@ -195,13 +205,26 @@ que nos prestan la infraestructura:</p>
 <td>Envío de correos transaccionales (códigos de acceso, avisos)</td>
 <td>Unión Europea</td>
 </tr>
+<tr>
+<td><strong>Expo (Expo Application Services, Inc.)</strong></td>
+<td>Envío de las notificaciones push de tus mensajes: recibe un fragmento del mensaje (hasta 120 caracteres), tu nombre de usuario, el título del grupo (si aplica) y el identificador técnico (token) de tu dispositivo</td>
+<td>Estados Unidos</td>
+</tr>
 </tbody></table>
 <p>Cada uno de estos proveedores trata los datos únicamente siguiendo nuestras instrucciones y
-con las garantías del RGPD.</p>
+con las garantías del RGPD. Para hacerte llegar el aviso en pantalla, Expo reenvía esos
+mismos datos a <strong>Apple (servicio APNs)</strong>: Apple no es un encargado nuestro, solo transporta
+la notificación hasta tu iPhone.</p>
 <hr>
 <h2>8. Transferencias internacionales</h2>
-<p>Tus datos se alojan y tratan <strong>dentro del Espacio Económico Europeo (EEE)</strong>. No realizamos
-transferencias internacionales de tus datos personales fuera del EEE.</p>
+<p>Tus datos se alojan y tratan <strong>dentro del Espacio Económico Europeo (EEE)</strong>: Supabase
+(Irlanda), Sentry (Alemania), PostHog y Resend (Unión Europea).</p>
+<p>La única transferencia fuera del EEE es el <strong>envío de las notificaciones push</strong>: el
+fragmento del mensaje, tu nombre de usuario y el token de tu dispositivo viajan a <strong>Expo
+(Estados Unidos)</strong> y de ahí a <strong>Apple (Estados Unidos)</strong>, que entrega el aviso a tu iPhone.
+Esta transferencia está amparada en el marco de adecuación <strong>EU-U.S. Data Privacy
+Framework</strong>, al que Expo declara estar adherido, y, para el tramo con Apple, en <strong>cláusulas
+contractuales tipo de la Comisión Europea</strong>.</p>
 <hr>
 <h2>9. Tus derechos</h2>
 <p>Puedes ejercer en cualquier momento los siguientes derechos:</p>
@@ -242,7 +265,9 @@ elaboración de perfiles en el sentido del art. 22 del RGPD.</p>
 <hr>
 <h2>13. Información almacenada en tu dispositivo</h2>
 <p>Para que la app funcione, se almacena en tu dispositivo un <strong>testigo de sesión</strong> (necesario
-para mantenerte con la sesión iniciada). Los componentes de <strong>diagnóstico de errores</strong> y de
+para mantenerte con la sesión iniciada) y <strong>una copia de lo que ya has visto</strong> (tu bandeja
+de chats con el último mensaje, las fotos que ya has abierto) para que la app abra rápido;
+esta copia se borra al cerrar sesión. Los componentes de <strong>diagnóstico de errores</strong> y de
 <strong>análisis de uso</strong> pueden almacenar información técnica mínima con la finalidad de detectar
 fallos y medir el uso de forma agregada. NOX <strong>no utiliza</strong> cookies publicitarias, SDK de
 marketing ni tecnologías de seguimiento entre aplicaciones. Puedes <strong>desactivar el análisis de
@@ -255,4 +280,5 @@ actualización&quot; del encabezado.</p>
 <hr>
 <h2>15. Contacto</h2>
 <p>Para cualquier cuestión sobre privacidad: <strong><a href="mailto:privacidad@getnox.es">privacidad@getnox.es</a></strong>.</p>
+
 <footer>© NOX · getnox.es</footer></div></body></html>
