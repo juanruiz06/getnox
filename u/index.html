@@ -45,12 +45,13 @@ footer a{margin-right:14px}
 <body>
 <div class="wrap">
 <header class="top"><span class="brand">NOX</span></header>
-<h1>Un perfil en NOX</h1>
-<p class="lead">Ábrelo en NOX, añádelo como amigo y ves sus planes.</p>
+<h1 id="title">Un perfil en NOX</h1>
+<p class="lead" id="lead">Ábrelo en NOX, añádelo como amigo y ves sus planes.</p>
 <div class="actions">
 <a class="btn btn-primary" id="open" hidden>Abrir en NOX</a>
 <a class="btn btn-secondary" href="https://apps.apple.com/es/app/id6797049428">Descargar en la App Store</a>
 </div>
+<p class="note" id="invite" hidden>¿Aún no tienes NOX? Descárgala y <strong>vuelve a tocar este enlace</strong>: así entras directo y tu amigo te encuentra dentro.</p>
 <p class="note" id="missing" hidden>Este enlace viene incompleto, así que no podemos abrirte el perfil. Bájate NOX y búscalo por su nombre de usuario.</p>
 <noscript><p class="note">Activa JavaScript para abrir el enlace en la app, o descarga NOX desde la App Store.</p></noscript>
 <script>
@@ -81,10 +82,26 @@ footer a{margin-right:14px}
   }
 
   var btn=document.getElementById('open'), miss=document.getElementById('missing');
+  // Código de invitación (spec 061): base62 de 22. Va al `nox://` para que la app lo
+  // reclame y deje enviada la solicitud. Con universal links (1.1.0) iOS abre la app antes
+  // de cargar esta página y el código viaja en la propia URL; esto cubre a los de 1.0.0.
+  var CODE=/^[0-9A-Za-z]{22}$/;
+  var code=ok(param('c'),CODE);
   var href=(function(){
     var i=ok(param('i'),ID);
-    return i?'nox://profile/'+encodeURIComponent(i):'';
+    if(!i){return '';}
+    var u='nox://profile/'+encodeURIComponent(i);
+    return code?u+'?c='+encodeURIComponent(code):u;
   })();
+  // Solo se enmarca como invitación si el enlace está completo: con `c` pero sin `i` no hay
+  // adónde ir, y decir "te han invitado" junto a "este enlace viene incompleto" es absurdo.
+  if(code&&href){
+    // Quien llega por una invitación no viene a "ver un perfil": viene a entrar.
+    document.getElementById('title').textContent='Te han invitado a NOX';
+    document.getElementById('lead').textContent='Ábrela y ya estarás dentro con quien te invitó.';
+    document.title='Te han invitado a NOX';
+    document.getElementById('invite').hidden=false;
+  }
   if(href){btn.setAttribute('href',href);btn.hidden=false;autoOpen(href);}
   else{miss.hidden=false;}
 })();
