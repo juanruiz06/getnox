@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0e0b16">
-<title>Un perfil en NOX</title>
+<title>Un perfil en NOTT</title>
 <meta name="description" content="Añádelo y ves sus planes.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="NOX">
-<meta property="og:title" content="Un perfil en NOX">
+<meta property="og:site_name" content="NOTT">
+<meta property="og:title" content="Un perfil en NOTT">
 <meta property="og:description" content="Añádelo y ves sus planes.">
-<meta property="og:image" content="https://getnox.es/og.png">
+<meta property="og:image" content="https://nott.es/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://getnox.es/u/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Un perfil en NOX">
+<meta name="twitter:title" content="Un perfil en NOTT">
 <meta name="twitter:description" content="Añádelo y ves sus planes.">
-<meta name="twitter:image" content="https://getnox.es/og.png">
+<meta name="twitter:image" content="https://nott.es/og.png">
 <style>
 :root{--bg:#0e0b16;--surface:#171226;--text:#ece8f5;--muted:#a89fc4;--primary:#c9a24b;--border:#2a2340}
 *{box-sizing:border-box}
@@ -44,16 +44,16 @@ footer a{margin-right:14px}
 </head>
 <body>
 <div class="wrap">
-<header class="top"><span class="brand">NOX</span></header>
-<h1 id="title">Un perfil en NOX</h1>
-<p class="lead" id="lead">Ábrelo en NOX, añádelo como amigo y ves sus planes.</p>
+<header class="top"><span class="brand">NOTT</span></header>
+<h1 id="title">Un perfil en NOTT</h1>
+<p class="lead" id="lead">Ábrelo en NOTT, añádelo como amigo y ves sus planes.</p>
 <div class="actions">
-<a class="btn btn-primary" id="open" hidden>Abrir en NOX</a>
+<a class="btn btn-primary" id="open" hidden>Abrir en NOTT</a>
 <a class="btn btn-secondary" href="https://apps.apple.com/es/app/id6797049428">Descargar en la App Store</a>
 </div>
-<p class="note" id="invite" hidden>¿Aún no tienes NOX? Descárgala y <strong>vuelve a tocar este enlace</strong>: así entras directo y tu amigo te encuentra dentro.</p>
-<p class="note" id="missing" hidden>Este enlace viene incompleto, así que no podemos abrirte el perfil. Bájate NOX y búscalo por su nombre de usuario.</p>
-<noscript><p class="note">Activa JavaScript para abrir el enlace en la app, o descarga NOX desde la App Store.</p></noscript>
+<p class="note" id="invite" hidden>¿Aún no tienes NOTT? Descárgala y <strong>vuelve a tocar este enlace</strong>: así entras directo y tu amigo te encuentra dentro.</p>
+<p class="note" id="missing" hidden>Este enlace viene incompleto, así que no podemos abrirte el perfil. Bájate NOTT y búscalo por su nombre de usuario.</p>
+<noscript><p class="note">Activa JavaScript para abrir el enlace en la app, o descarga NOTT desde la App Store.</p></noscript>
 <script>
 (function(){
   var ID=/^[A-Za-z0-9._-]{1,80}$/;
@@ -71,7 +71,7 @@ footer a{margin-right:14px}
     return '';
   }
   function ok(v,re){return v&&re.test(v)?v:'';}
-  // Si NOX está instalada, iOS pregunta "¿Abrir en NOX?" y la abre con el nox://. Aquí
+  // Si NOTT está instalada, iOS pregunta "¿Abrir en NOTT?" y la abre con el nox://. Aquí
   // SOLO se intenta abrir la app: la App Store automática se quitó (QA 2026-09-14) porque
   // con el aviso de iOS en pantalla la página sigue visible y el temporizador mandaba a la
   // App Store aunque la app se abriera. El botón "Descargar en la App Store" ya lleva allí.
@@ -97,9 +97,9 @@ footer a{margin-right:14px}
   // adónde ir, y decir "te han invitado" junto a "este enlace viene incompleto" es absurdo.
   if(code&&href){
     // Quien llega por una invitación no viene a "ver un perfil": viene a entrar.
-    document.getElementById('title').textContent='Te han invitado a NOX';
+    document.getElementById('title').textContent='Te han invitado a NOTT';
     document.getElementById('lead').textContent='Ábrela y ya estarás dentro con quien te invitó.';
-    document.title='Te han invitado a NOX';
+    document.title='Te han invitado a NOTT';
     document.getElementById('invite').hidden=false;
   }
   if(href){btn.setAttribute('href',href);btn.hidden=false;autoOpen(href);}
@@ -108,7 +108,7 @@ footer a{margin-right:14px}
 </script>
 <footer>
 <a href="/privacidad/">Privacidad</a><a href="/terminos/">Términos</a><a href="/soporte/">Soporte</a>
-<p>© NOX · getnox.es</p>
+<p>© NOTT · getnox.es</p>
 </footer>
 </div>
 </body>
